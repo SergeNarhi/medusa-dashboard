@@ -3,16 +3,11 @@ import { DropdownMenu, IconButton, clx } from "@medusajs/ui"
 import { EllipsisHorizontal } from "@medusajs/icons"
 import { ReactNode } from "react"
 import { Link } from "react-router-dom"
-import { ConditionalTooltip } from "../conditional-tooltip"
 
 export type Action = {
   icon: ReactNode
   label: string
   disabled?: boolean
-  /**
-   * Optional tooltip to display when a disabled action is hovered.
-   */
-  disabledTooltip?: string | ReactNode
 } & (
   | {
       to: string
@@ -51,43 +46,30 @@ export const ActionMenu = ({ groups }: ActionMenuProps) => {
           return (
             <DropdownMenu.Group key={index}>
               {group.actions.map((action, index) => {
-                const Wrapper = action.disabledTooltip
-                  ? ({ children }: { children: ReactNode }) => (
-                      <ConditionalTooltip
-                        showTooltip={action.disabled}
-                        content={action.disabledTooltip}
-                        side="right"
-                      >
-                        <div>{children}</div>
-                      </ConditionalTooltip>
-                    )
-                  : "div"
-
                 if (action.onClick) {
                   return (
-                    <Wrapper key={index}>
-                      <DropdownMenu.Item
-                        disabled={action.disabled}
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          action.onClick()
-                        }}
-                        className={clx(
-                          "[&_svg]:text-ui-fg-subtle flex items-center gap-x-2",
-                          {
-                            "[&_svg]:text-ui-fg-disabled": action.disabled,
-                          }
-                        )}
-                      >
-                        {action.icon}
-                        <span>{action.label}</span>
-                      </DropdownMenu.Item>
-                    </Wrapper>
+                    <DropdownMenu.Item
+                      disabled={action.disabled}
+                      key={index}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        action.onClick()
+                      }}
+                      className={clx(
+                        "[&_svg]:text-ui-fg-subtle flex items-center gap-x-2",
+                        {
+                          "[&_svg]:text-ui-fg-disabled": action.disabled,
+                        }
+                      )}
+                    >
+                      {action.icon}
+                      <span>{action.label}</span>
+                    </DropdownMenu.Item>
                   )
                 }
 
                 return (
-                  <Wrapper key={index}>
+                  <div key={index}>
                     <DropdownMenu.Item
                       className={clx(
                         "[&_svg]:text-ui-fg-subtle flex items-center gap-x-2",
@@ -103,7 +85,7 @@ export const ActionMenu = ({ groups }: ActionMenuProps) => {
                         <span>{action.label}</span>
                       </Link>
                     </DropdownMenu.Item>
-                  </Wrapper>
+                  </div>
                 )
               })}
               {!isLast && <DropdownMenu.Separator />}

@@ -72,9 +72,7 @@ export function CreateOrderTransferForm({
       >
         <RouteDrawer.Body className="flex-1 overflow-auto">
           <div className="flex flex-col gap-y-8">
-            <div className="flex justify-center">
-              <TransferHeader />
-            </div>
+            <TransferHeader />
             <Form.Field
               control={form.control}
               name="current_customer_details"

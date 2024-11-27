@@ -515,9 +515,6 @@
         },
         "import": {
           "type": "string"
-        },
-        "cannotUndo": {
-          "type": "string"
         }
       },
       "required": [
@@ -561,8 +558,7 @@
         "logout",
         "hide",
         "export",
-        "import",
-        "cannotUndo"
+        "import"
       ],
       "additionalProperties": false
     },
@@ -5331,15 +5327,11 @@
                     },
                     "confirmed": {
                       "type": "string"
-                    },
-                    "declined": {
-                      "type": "string"
                     }
                   },
                   "required": [
                     "requested",
-                    "confirmed",
-                    "declined"
+                    "confirmed"
                   ],
                   "additionalProperties": false
                 }

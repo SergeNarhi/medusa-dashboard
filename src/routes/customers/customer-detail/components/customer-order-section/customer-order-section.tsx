@@ -120,10 +120,11 @@ const useColumns = () => {
   return useMemo(
     () => [
       ...base,
-      columnHelper.display({
-        id: "actions",
-        cell: ({ row }) => <CustomerOrderActions order={row.original} />,
-      }),
+      // TODO: REENABLE WHEN TRANSFER OWNERSHIP IS IMPLEMENTED
+      // columnHelper.display({
+      //   id: "actions",
+      //   cell: ({ row }) => <CustomerOrderActions order={row.original} />,
+      // }),
     ],
     [base]
   )

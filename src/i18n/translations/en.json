@@ -136,8 +136,7 @@
     "logout": "Logout",
     "hide": "Hide",
     "export": "Export",
-    "import": "Import",
-    "cannotUndo": "This action cannot be undone"
+    "import": "Import"
   },
   "operators": {
     "in": "In"
@@ -1294,8 +1293,7 @@
         },
         "transfer": {
           "requested": "Order transfer #{{transferId}} requested",
-          "confirmed": "Order transfer #{{transferId}} confirmed",
-          "declined": "Order transfer #{{transferId}} declined"
+          "confirmed": "Order transfer #{{transferId}} confirmed"
         }
       }
     },
