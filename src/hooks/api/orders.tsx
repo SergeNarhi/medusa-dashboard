@@ -286,6 +286,31 @@ export const useRequestTransferOrder = (
         queryKey: ordersQueryKeys.preview(orderId),
       })
 
+      queryClient.invalidateQueries({
+        queryKey: ordersQueryKeys.changes(orderId),
+      })
+
+      options?.onSuccess?.(data, variables, context)
+    },
+    ...options,
+  })
+}
+
+export const useCancelOrderTransfer = (
+  orderId: string,
+  options?: UseMutationOptions<any, FetchError, void>
+) => {
+  return useMutation({
+    mutationFn: () => sdk.admin.order.cancelTransfer(orderId),
+    onSuccess: (data: any, variables: any, context: any) => {
+      queryClient.invalidateQueries({
+        queryKey: ordersQueryKeys.preview(orderId),
+      })
+
+      queryClient.invalidateQueries({
+        queryKey: ordersQueryKeys.changes(orderId),
+      })
+
       options?.onSuccess?.(data, variables, context)
     },
     ...options,

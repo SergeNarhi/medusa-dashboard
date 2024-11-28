@@ -59,7 +59,7 @@ export const ProductTagProductSection = ({
         columns={columns}
         pageSize={PAGE_SIZE}
         count={count}
-        navigateTo={(row) => row.original.id}
+        navigateTo={(row) => `/products/${row.original.id}`}
         search
         pagination
         orderBy={[

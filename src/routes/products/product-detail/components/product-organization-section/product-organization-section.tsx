@@ -1,6 +1,6 @@
 import { PencilSquare } from "@medusajs/icons"
 import { HttpTypes } from "@medusajs/types"
-import { Badge, Container, Heading } from "@medusajs/ui"
+import { Badge, Container, Heading, Tooltip } from "@medusajs/ui"
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
 import { ActionMenu } from "../../../../../components/common/action-menu"
@@ -41,9 +41,11 @@ export const ProductOrganizationSection = ({
         value={
           product.tags?.length
             ? product.tags.map((tag) => (
-                <Badge key={tag.id} className="w-fit" size="2xsmall" asChild>
-                  <Link to={`/products?tag_id=${tag.id}`}>{tag.value}</Link>
-                </Badge>
+                <OrganizationTag
+                  key={tag.id}
+                  label={tag.value}
+                  to={`/settings/product-tags/${tag.id}`}
+                />
               ))
             : undefined
         }
@@ -52,11 +54,10 @@ export const ProductOrganizationSection = ({
         title={t("fields.type")}
         value={
           product.type ? (
-            <Badge size="2xsmall" className="w-fit" asChild>
-              <Link to={`/products?type_id=${product.type_id}`}>
-                {product.type.value}
-              </Link>
-            </Badge>
+            <OrganizationTag
+              label={product.type.value}
+              to={`/settings/product-types/${product.type_id}`}
+            />
           ) : undefined
         }
       />
@@ -65,11 +66,10 @@ export const ProductOrganizationSection = ({
         title={t("fields.collection")}
         value={
           product.collection ? (
-            <Badge size="2xsmall" className="max-w-[182px]" asChild>
-              <Link to={`/collections/${product.collection.id}`}>
-                <span className="truncate">{product.collection.title}</span>
-              </Link>
-            </Badge>
+            <OrganizationTag
+              label={product.collection.title}
+              to={`/collections/${product.collection.id}`}
+            />
           ) : undefined
         }
       />
@@ -79,9 +79,11 @@ export const ProductOrganizationSection = ({
         value={
           product.categories?.length
             ? product.categories.map((pcat) => (
-                <Badge key={pcat.id} className="w-fit" size="2xsmall" asChild>
-                  <Link to={`/categories/${pcat.id}`}>{pcat.name}</Link>
-                </Badge>
+                <OrganizationTag
+                  key={pcat.id}
+                  label={pcat.name}
+                  to={`/categories/${pcat.id}`}
+                />
               ))
             : undefined
         }
@@ -91,5 +93,15 @@ export const ProductOrganizationSection = ({
         return <Component key={i} data={product} />
       })}
     </Container>
+  )
+}
+
+const OrganizationTag = ({ label, to }: { label: string; to: string }) => {
+  return (
+    <Tooltip content={label}>
+      <Badge size="2xsmall" className="block w-fit truncate" asChild>
+        <Link to={to}>{label}</Link>
+      </Badge>
+    </Tooltip>
   )
 }

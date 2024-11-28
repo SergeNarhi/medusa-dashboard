@@ -925,6 +925,14 @@
       "discountSubtotal": "İndirim Ara Toplamı",
       "taxTotal": "Vergi Toplamı"
     },
+    "transfer": {
+      "title": "Mülkiyeti Devret",
+      "requestSuccess": "Sipariş devri talebi şu kişiye gönderildi: {{email}}.",
+      "currentOwner": "Mevcut Sahip",
+      "newOwner": "Yeni Sahip",
+      "currentOwnerDescription": "Bu siparişle şu anda ilişkili olan müşteri.",
+      "newOwnerDescription": "Bu siparişin devredileceği müşteri."
+    },
     "payment": {
       "title": "Ödemeler",
       "isReadyToBeCaptured": "Ödeme <0/> alınmaya hazır.",
@@ -1228,6 +1236,8 @@
         "addButtonText": "Yorum ekle",
         "deleteButtonText": "Yorumu sil"
       },
+      "from": "Kimden",
+      "to": "Kime",
       "events": {
         "common": {
           "toReturn": "İade edilecek",
@@ -1280,6 +1290,10 @@
         "edit": {
           "requested": "Sipariş düzenlemesi #{{editId}} talep edildi",
           "confirmed": "Sipariş düzenlemesi #{{editId}} onaylandı"
+        },
+        "transfer": {
+          "requested": "Sipariş devri #{{transferId}} talep edildi",
+          "confirmed": "Sipariş devri #{{transferId}} onaylandı"
         }
       }
     },

@@ -2009,9 +2009,6 @@ video {
 .max-w-\[1600px\] {
   max-width: 1600px;
 }
-.max-w-\[182px\] {
-  max-width: 182px;
-}
 .max-w-\[187px\] {
   max-width: 187px;
 }
@@ -2846,8 +2843,20 @@ video {
 .bg-repeat-y {
   background-repeat: repeat-y;
 }
+.fill-ui-bg-base {
+  fill: var(--bg-base);
+}
 .fill-ui-button-inverted {
   fill: var(--button-inverted);
+}
+.fill-ui-fg-muted {
+  fill: var(--fg-muted);
+}
+.fill-ui-fg-subtle {
+  fill: var(--fg-subtle);
+}
+.stroke-ui-fg-subtle {
+  stroke: var(--fg-subtle);
 }
 .object-contain {
   -o-object-fit: contain;

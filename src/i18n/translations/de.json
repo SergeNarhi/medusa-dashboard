@@ -925,6 +925,14 @@
       "discountSubtotal": "Rabatt-Zwischensumme",
       "taxTotal": "Steuersumme"
     },
+    "transfer": {
+      "title": "Eigentumsübertragung",
+      "requestSuccess": "Anfrage zur Eigentumsübertragung an: {{email}}.",
+      "currentOwner": "Aktueller Besitzer",
+      "newOwner": "Neuer Besitzer",
+      "currentOwnerDescription": "Der Kunde, der derzeit mit dieser Bestellung verbunden ist.",
+      "newOwnerDescription": "Der Kunde, an den Sie diese Bestellung übertragen möchten."
+    },
     "payment": {
       "title": "Zahlungen",
       "isReadyToBeCaptured": "Die Zahlung <0/> kann erfasst werden.",
@@ -1228,6 +1236,8 @@
         "addButtonText": "Kommentar hinzufügen",
         "deleteButtonText": "Kommentar löschen"
       },
+      "from": "Von",
+      "to": "An",
       "events": {
         "common": {
           "toReturn": "Zurückkehren",
@@ -1280,6 +1290,10 @@
         "edit": {
           "requested": "Bestellbearbeitung #{{editId}} angefordert",
           "confirmed": "Bestellbearbeitung #{{editId}} bestätigt"
+        },
+        "transfer": {
+          "requested": "Bestellung #{{transferId}} übertragen",
+          "confirmed": "Bestellung #{{transferId}} übertragen"
         }
       }
     },

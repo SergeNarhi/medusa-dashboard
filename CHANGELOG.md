@@ -1,5 +1,24 @@
 # @medusajs/dashboard
 
+## 2.0.7
+
+### Patch Changes
+
+- [#10188](https://github.com/medusajs/medusa/pull/10188) [`ade1545207a4f45c138a785688c625fae797b694`](https://github.com/medusajs/medusa/commit/ade1545207a4f45c138a785688c625fae797b694) Thanks [@DanSilva41](https://github.com/DanSilva41)! - feat(dashboard): Add ptBR i18n
+
+- [#10312](https://github.com/medusajs/medusa/pull/10312) [`2edc2fe19b6afae41e3b6945b7abfbd8e3fa6e5c`](https://github.com/medusajs/medusa/commit/2edc2fe19b6afae41e3b6945b7abfbd8e3fa6e5c) Thanks [@kasperkristensen](https://github.com/kasperkristensen)! - fix(dashboard): Prevent product metadata form from throwing an error
+
+- [#10261](https://github.com/medusajs/medusa/pull/10261) [`da536aba244e46a81b2237f782be71c8d2d54802`](https://github.com/medusajs/medusa/commit/da536aba244e46a81b2237f782be71c8d2d54802) Thanks [@kasperkristensen](https://github.com/kasperkristensen)! - fix(dashboard): Truncate long product organization tags
+
+- [#10234](https://github.com/medusajs/medusa/pull/10234) [`3ab056e572c2391bc66e58fb515d033f5024da1e`](https://github.com/medusajs/medusa/commit/3ab056e572c2391bc66e58fb515d033f5024da1e) Thanks [@kasperkristensen](https://github.com/kasperkristensen)! - feat(dashboard): Allow setting a tooltip for disabled action items
+
+- [#10285](https://github.com/medusajs/medusa/pull/10285) [`344a6c9ea05a1d59a3a7de5282ae7ecda141d6ae`](https://github.com/medusajs/medusa/commit/344a6c9ea05a1d59a3a7de5282ae7ecda141d6ae) Thanks [@kasperkristensen](https://github.com/kasperkristensen)! - fix(dashboard): Add Metadata form to Variant page
+
+- Updated dependencies []:
+  - @medusajs/admin-shared@2.0.7
+  - @medusajs/js-sdk@2.0.7
+  - @medusajs/icons@2.0.7
+
 ## 2.0.6
 
 ### Patch Changes

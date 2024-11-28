@@ -10,9 +10,17 @@ import { CreateOrderTransferForm } from "./components/create-order-transfer-form
 export const OrderRequestTransfer = () => {
   const { t } = useTranslation()
   const params = useParams()
-  const { order } = useOrder(params.id!, {
+
+  // Form is rendered bot on the order details page and customer page so we need to pick the correct param from URL
+  const orderId = (params.order_id || params.id) as string
+
+  const { order, isPending, isError } = useOrder(orderId, {
     fields: DEFAULT_FIELDS,
   })
+
+  if (!isPending && isError) {
+    throw new Error("Order not found")
+  }
 
   return (
     <RouteDrawer>
@@ -20,7 +28,7 @@ export const OrderRequestTransfer = () => {
         <Heading>{t("orders.transfer.title")}</Heading>
       </RouteDrawer.Header>
 
-      <CreateOrderTransferForm order={order} />
+      {order && <CreateOrderTransferForm order={order} />}
     </RouteDrawer>
   )
 }

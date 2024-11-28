@@ -925,6 +925,14 @@
       "discountSubtotal": "Suma rabatów",
       "taxTotal": "Suma podatku"
     },
+    "transfer": {
+      "title": "Przekaż własność",
+      "requestSuccess": "Wniosek o przekazanie zamówienia do: {{email}}.",
+      "currentOwner": "Obecny właściciel",
+      "newOwner": "Nowy właściciel",
+      "currentOwnerDescription": "Klient obecnie związany z tym zamówieniem.",
+      "newOwnerDescription": "Klient, do którego chcesz przekazać to zamówienie."
+    },
     "payment": {
       "title": "Płatności",
       "isReadyToBeCaptured": "Płatność <0/> jest gotowa do realizacji.",
@@ -1228,6 +1236,8 @@
         "addButtonText": "Dodaj komentarz",
         "deleteButtonText": "Usuń komentarz"
       },
+      "from": "Z",
+      "to": "Do",
       "events": {
         "common": {
           "toReturn": "Do zwrotu",
@@ -1280,6 +1290,10 @@
         "edit": {
           "requested": "Edycja zamówienia #{{editId}} złożona",
           "confirmed": "Edycja zamówienia #{{editId}} potwierdzona"
+        },
+        "transfer": {
+          "requested": "Zamówienie przekazane #{{transferId}} złożone",
+          "confirmed": "Zamówienie przekazane #{{transferId}} potwierdzone"
         }
       }
     },
